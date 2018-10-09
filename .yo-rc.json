@@ -1,0 +1,41 @@
+{
+  "generator-jhipster": {
+    "promptValues": {
+      "packageName": "ru.wolfa.lecture.planner",
+      "nativeLanguage": "en"
+    },
+    "jhipsterVersion": "5.4.2",
+    "applicationType": "monolith",
+    "baseName": "LecturePlanner",
+    "packageName": "ru.wolfa.lecture.planner",
+    "packageFolder": "ru/wolfa/lecture/planner",
+    "serverPort": "8080",
+    "authenticationType": "session",
+    "cacheProvider": "hazelcast",
+    "enableHibernateCache": true,
+    "websocket": false,
+    "databaseType": "sql",
+    "devDatabaseType": "h2Disk",
+    "prodDatabaseType": "postgresql",
+    "searchEngine": false,
+    "messageBroker": false,
+    "serviceDiscoveryType": false,
+    "buildTool": "gradle",
+    "enableSwaggerCodegen": true,
+    "rememberMeKey": "ba5e47665f065f2a0c82de454103055fa5b1e8f46122a46a38029ce3513fac79b1e81eb8fb73873cf0c86add8a0bdafb9f18",
+    "clientFramework": "angularX",
+    "useSass": false,
+    "clientPackageManager": "npm",
+    "testFrameworks": [
+      "cucumber",
+      "protractor"
+    ],
+    "jhiPrefix": "jhi",
+    "enableTranslation": true,
+    "nativeLanguage": "en",
+    "languages": [
+      "en",
+      "ru"
+    ]
+  }
+}
