@@ -1,0 +1,26 @@
+
+{
+    "lecturePlannerApp": {
+        "lecture" : {
+            "home": {
+                "title": "Lectures",
+                "createLabel": "Создать новый Lecture",
+                "createOrEditLabel": "Создать или отредактировать Lecture"
+            },
+            "created": "Новый Lecture создан с идентификатором {{ param }}",
+            "updated": "Lecture обновлен с идентификатором {{ param }}",
+            "deleted": "Lecture удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Lecture {{ id }}?"
+            },
+            "detail": {
+                "title": "Lecture"
+            },
+            "name": "Name",
+            "slides": "Slides",
+            "help": {
+                "name": "Название лекции"
+            }
+        }
+    }
+}

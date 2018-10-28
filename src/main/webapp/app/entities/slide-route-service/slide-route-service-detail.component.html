@@ -1,0 +1,41 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <div *ngIf="slide">
+            <h2><span jhiTranslate="lecturePlannerApp.slide.detail.title">Slide</span> {{slide.id}}</h2>
+            <hr>
+            <jhi-alert-error></jhi-alert-error>
+            <dl class="row-md jh-entity-details">
+                <dt><span jhiTranslate="lecturePlannerApp.slide.number" [ngbTooltip]="'lecturePlannerApp.slide.help.number' | translate">Number</span></dt>
+                <dd>
+                    <span>{{slide.number}}</span>
+                </dd>
+                <dt><span jhiTranslate="lecturePlannerApp.slide.timing" [ngbTooltip]="'lecturePlannerApp.slide.help.timing' | translate">Timing</span></dt>
+                <dd>
+                    <span>{{slide.timing}}</span>
+                </dd>
+                <dt><span jhiTranslate="lecturePlannerApp.slide.text" [ngbTooltip]="'lecturePlannerApp.slide.help.text' | translate">Text</span></dt>
+                <dd>
+                    <span>{{slide.text}}</span>
+                </dd>
+                <dt><span jhiTranslate="lecturePlannerApp.slide.lecture">Lecture</span></dt>
+                <dd>
+                    <div *ngIf="slide.lectureId">
+                        <a [routerLink]="['/lecture-route-service', slide.lectureId, 'view']">{{slide.lectureId}}</a>
+                    </div>
+                </dd>
+            </dl>
+
+            <button type="submit"
+                    (click)="previousState()"
+                    class="btn btn-info">
+                <fa-icon [icon]="'arrow-left'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.back"> Back</span>
+            </button>
+
+            <button type="button"
+                    [routerLink]="['/slide-route-service', slide.id, 'edit']"
+                    class="btn btn-primary">
+                <fa-icon [icon]="'pencil-alt'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.edit"> Edit</span>
+            </button>
+        </div>
+    </div>
+</div>

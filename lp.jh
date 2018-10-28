@@ -1,0 +1,31 @@
+/* Лекция */
+entity Lecture {
+    /* Название лекции */
+    name String required maxlength(1000)
+}
+
+/* Слайд */
+entity Slide {
+	/* Номер слайда */
+	number Integer required,
+    /* Примерное время на текущий слайд */
+    timing Integer required,
+    /* Текст по слайду */
+    text String required maxlength(10000)
+}
+
+relationship ManyToOne {
+    /* Лекция */
+    Slide{lecture required} to Lecture{slides}
+}
+
+// Set pagination options
+paginate Lecture with pagination
+paginate Slide with infinite-scroll
+
+dto * with mapstruct
+
+// Set service options to all except few
+service Slide with serviceImpl
+// Set an angular suffix
+angularSuffix * with routeService

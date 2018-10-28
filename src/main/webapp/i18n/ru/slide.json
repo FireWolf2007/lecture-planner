@@ -1,0 +1,30 @@
+
+{
+    "lecturePlannerApp": {
+        "slide" : {
+            "home": {
+                "title": "Slides",
+                "createLabel": "Создать новый Slide",
+                "createOrEditLabel": "Создать или отредактировать Slide"
+            },
+            "created": "Новый Slide создан с идентификатором {{ param }}",
+            "updated": "Slide обновлен с идентификатором {{ param }}",
+            "deleted": "Slide удален с идентификатором {{ param }}",
+            "delete": {
+                "question": "Вы уверены что хотите удалить Slide {{ id }}?"
+            },
+            "detail": {
+                "title": "Slide"
+            },
+            "number": "Number",
+            "timing": "Timing",
+            "text": "Text",
+            "lecture": "Lecture",
+            "help": {
+                "number": "Номер слайда",
+                "timing": "Примерное время на текущий слайд",
+                "text": "Текст по слайду"
+            }
+        }
+    }
+}

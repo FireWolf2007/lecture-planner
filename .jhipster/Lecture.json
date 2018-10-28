@@ -1,0 +1,34 @@
+{
+    "name": "Lecture",
+    "fields": [
+        {
+            "fieldName": "name",
+            "javadoc": "Название лекции",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 1000
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "one-to-many",
+            "relationshipName": "slides",
+            "otherEntityName": "slide",
+            "otherEntityRelationshipName": "lecture"
+        }
+    ],
+    "changelogDate": "20181020175521",
+    "javadoc": "Лекция",
+    "entityTableName": "lecture",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "routeService"
+}

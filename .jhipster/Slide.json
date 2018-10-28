@@ -1,0 +1,52 @@
+{
+    "name": "Slide",
+    "fields": [
+        {
+            "fieldName": "number",
+            "javadoc": "Номер слайда",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "timing",
+            "javadoc": "Примерное время на текущий слайд",
+            "fieldType": "Integer",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "text",
+            "javadoc": "Текст по слайду",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": 10000
+        }
+    ],
+    "relationships": [
+        {
+            "relationshipType": "many-to-one",
+            "relationshipValidateRules": "required",
+            "javadoc": "Лекция",
+            "relationshipName": "lecture",
+            "otherEntityName": "lecture",
+            "otherEntityField": "id"
+        }
+    ],
+    "changelogDate": "20181020175522",
+    "javadoc": "Слайд",
+    "entityTableName": "slide",
+    "dto": "mapstruct",
+    "pagination": "pagination",
+    "service": "serviceImpl",
+    "jpaMetamodelFiltering": false,
+    "fluentMethods": true,
+    "clientRootFolder": "",
+    "applications": "*",
+    "angularJSSuffix": "routeService"
+}

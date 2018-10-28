@@ -1,0 +1,82 @@
+<div class="row justify-content-center">
+    <div class="col-8">
+        <form name="editForm" role="form" novalidate (ngSubmit)="save()" #editForm="ngForm">
+            <h2 id="jhi-slide-route-service-heading" jhiTranslate="lecturePlannerApp.slide.home.createOrEditLabel">Create or edit a Slide</h2>
+            <div>
+                <jhi-alert-error></jhi-alert-error>
+                <div class="form-group" [hidden]="!slide.id">
+                    <label for="id" jhiTranslate="global.field.id">ID</label>
+                    <input type="text" class="form-control" id="id" name="id"
+                        [(ngModel)]="slide.id" readonly />
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lecturePlannerApp.slide.number" for="field_number" [ngbTooltip]="'lecturePlannerApp.slide.help.number' | translate">Number</label>
+                    <input type="number" class="form-control" name="number" id="field_number"
+                        [(ngModel)]="slide.number" required/>
+                    <div [hidden]="!(editForm.controls.number?.dirty && editForm.controls.number?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.number?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.number?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lecturePlannerApp.slide.timing" for="field_timing" [ngbTooltip]="'lecturePlannerApp.slide.help.timing' | translate">Timing</label>
+                    <input type="number" class="form-control" name="timing" id="field_timing"
+                        [(ngModel)]="slide.timing" required/>
+                    <div [hidden]="!(editForm.controls.timing?.dirty && editForm.controls.timing?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.timing?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                            [hidden]="!editForm.controls.timing?.errors?.number" jhiTranslate="entity.validation.number">
+                            This field should be a number.
+                        </small>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lecturePlannerApp.slide.text" for="field_text" [ngbTooltip]="'lecturePlannerApp.slide.help.text' | translate">Text</label>
+                    <input type="text" class="form-control" name="text" id="field_text"
+                        [(ngModel)]="slide.text" required maxlength="10000"/>
+                    <div [hidden]="!(editForm.controls.text?.dirty && editForm.controls.text?.invalid)">
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.text?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                        </small>
+                        <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.text?.errors?.maxlength" jhiTranslate="entity.validation.maxlength" translateValues="{ max: 10000 }">
+                        This field cannot be longer than 10000 characters.
+                        </small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label class="form-control-label" jhiTranslate="lecturePlannerApp.slide.lecture" for="field_lecture">Lecture</label>
+                    <select class="form-control" id="field_lecture" name="lecture" [(ngModel)]="slide.lectureId"  required>
+                        <option *ngIf="!editForm.value.lecture" [ngValue]="null" selected></option>
+                        <option [ngValue]="lectureOption.id" *ngFor="let lectureOption of lectures; trackBy: trackLectureById">{{lectureOption.id}}</option>
+                    </select>
+                </div>
+                <div [hidden]="!(editForm.controls.lecture?.dirty && editForm.controls.lecture?.invalid)">
+                    <small class="form-text text-danger"
+                        [hidden]="!editForm.controls.lecture?.errors?.required" jhiTranslate="entity.validation.required">
+                        This field is required.
+                    </small>
+                </div>
+            </div>
+            <div>
+                <button type="button" id="cancel-save" class="btn btn-secondary"  (click)="previousState()">
+                    <fa-icon [icon]="'ban'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.cancel">Cancel</span>
+                </button>
+                <button type="submit" id="save-entity" [disabled]="editForm.form.invalid || isSaving" class="btn btn-primary">
+                    <fa-icon [icon]="'save'"></fa-icon>&nbsp;<span jhiTranslate="entity.action.save">Save</span>
+                </button>
+            </div>
+        </form>
+    </div>
+</div>
